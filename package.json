@@ -1,0 +1,9 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "prueba para talenta365",
+  "main": "server.js",
+  "author": "Daniel Aguirre",
+  "license": "MIT",
+  "private": true
+}
