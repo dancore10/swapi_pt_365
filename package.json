@@ -5,5 +5,8 @@
   "main": "server.js",
   "author": "Daniel Aguirre",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

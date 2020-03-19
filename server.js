@@ -1,10 +1,20 @@
 global.config = require('./config.json');
 var fs = require('fs');
-var server = require('http');
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var app = express();
 
-server.createServer((req, res)=>{
-    res.writeHead(200, {"Content-Type": "text/html"});
-    res.end(fs.readFileSync('./views/test.html', 'utf8'));
-}).listen(config.PORT, ()=>{
+var server = http.createServer(app);
+
+app.set('view engine','html');
+
+app.use(express.static(path.join(__dirname, '/views/public')));
+
+app.get('/', (req,res)=>{
+    res.sendFile(__dirname + '/views/test.html')
+})
+
+server.listen(config.PORT, ()=>{
     console.log('Server running up at: '+ config.HOST+':'+config.PORT);
 });
