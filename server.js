@@ -12,7 +12,7 @@ app.set('view engine','html');
 app.use(express.static(path.join(__dirname, '/views/public')));
 
 app.get('/', (req,res)=>{
-    res.sendFile(__dirname + '/views/test.html')
+    res.sendFile(__dirname + '/views/index.html')
 })
 
 server.listen(config.PORT, ()=>{
